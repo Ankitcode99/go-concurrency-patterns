@@ -29,7 +29,7 @@ func simulateLogSource(ctx context.Context) <-chan LogEntry {
 			select {
 			case <-ctx.Done():
 				return
-			case <-time.After(100 * time.Millisecond):
+			case <-time.After(1 * time.Millisecond):
 				entry := LogEntry{
 					Timestamp: time.Now(),
 					Level:     levels[time.Now().UnixNano()%int64(len(levels))],
